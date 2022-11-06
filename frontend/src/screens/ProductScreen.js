@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect , useReducer } from "react";
 import { useParams } from "react-router-dom";
+import {Row, Col, ListGroup, ListGroupItem, Card, Badge, Button} from "react-bootstrap";
+import Rating from "../component/Rating";
+import {Helmet} from 'react-helmet-async';
 
 const reducer=(state,action)=>{
     switch(action.type){
@@ -44,7 +47,60 @@ function ProductScreen(){
     ) : error ? (
         <div>{error}</div> 
     ) : ( 
-        <div> {product.name} </div>
+        <div>
+          <Row>
+            <Col md ={6}><img className = "img-large" src={product.image} alt={product.name}></img></Col>
+            <Col md ={3}>
+              <ListGroup variant="flush">
+                <ListGroupItem>
+                  <Helmet>
+                    <title>{product.name}</title>
+                  </Helmet>
+                  <h1>{product.name}</h1></ListGroupItem>
+                <ListGroupItem>
+                  <Rating>
+                    rating={product.rating}
+                    numReviews ={product.numReviews}
+                  </Rating>
+                  
+                </ListGroupItem>
+                <ListGroupItem>Price: Rs.{product.price}</ListGroupItem>
+                <ListGroupItem>Description:<p>{product.Description}</p></ListGroupItem>
+              </ListGroup>
+            </Col>
+            <Col md ={3}>
+              <Card>
+                <Card.Body>
+                <ListGroup variant="flush">
+                <ListGroupItem>
+                  <Row>
+                    <Col>Price :</Col>
+                    <Col>Rs.{product.price}</Col>
+                  </Row>
+                </ListGroupItem>
+                </ListGroup>
+                <ListGroup variant="flush">
+                <ListGroupItem>
+                  <Row>
+                    <Col>Status :</Col>
+                    <Col>{product.countInStock>0 ?<Badge bg="success">In Stock</Badge> : <Badge bg="danger">Out of Stock</Badge> }</Col>
+                  </Row>
+                </ListGroupItem>
+
+                {product.countInStock > 0 && (
+                  <ListGroupItem>
+                    <div className="d-grid">
+                      <Button variant = "primary">Add to Cart</Button>
+                    </div>
+                  </ListGroupItem>
+                )}
+
+                </ListGroup>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </div>
     );
 }
 
