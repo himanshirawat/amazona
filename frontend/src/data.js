@@ -1,18 +1,20 @@
 const data = {
     products : [
         {
+            _id: '1',
             name: 'mango pickle',
             slug: 'pickles-1',
             category : 'PICKLE',
             image : '/images/p1.jpg',
             price:320,
-            countInStock: 10,
+            countInStock: 20,
             brand : 'PAHADI',
             rating : 4.5,
             numReview: 10,
             Description :'High Quality Food'
         },
         {
+            _id: '2',
             name: 'mango pickle',
             slug: 'pickles-2',
             category : 'PICKLE',
@@ -25,6 +27,7 @@ const data = {
             Description :'High Quality food'
         },
         {
+            _id: '3',
             name: 'mango pickle',
             slug: 'pickles-3',
             category : 'PICKLE',
