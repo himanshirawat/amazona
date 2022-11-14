@@ -48,7 +48,6 @@ const data = {
             Description :'High Quality food'
         },
         {
-            
             name: 'Ginger pickle',
             slug: 'pickles-3',
             category : 'PICKLE',
@@ -59,6 +58,67 @@ const data = {
             rating : 3.5,
             numReviews: 10,
             Description :'High Quality pickle'
+        },
+        {
+            name: 'Bhat Dal',
+            slug: 'dal-1',
+            category : 'pulses',
+            image : '/images/bhat.jpeg',
+            price:300,
+            countInStock: 20,
+            brand : 'PAHADI',
+            rating : 4.5,
+            numReviews: 10,
+            Description :'High Quality food'
+        },
+        {
+            name: 'Rajma dal',
+            slug: 'dal-2',
+            category : 'pulses',
+            image : '/images/rajma.jpg',
+            price:200,
+            countInStock: 15,
+            brand : 'PAHADI',
+            rating : 4.5,
+            numReviews: 10,
+            Description :'High Quality food'
+        },
+        {
+            name: 'Basket',
+            slug: 'item-1',
+            category : 'Goods',
+            image : '/images/basket.jpeg',
+            price:150,
+            countInStock: 200,
+            brand : 'PAHADI',
+            rating : 4,
+            numReviews: 10,
+            Description :'High Quality product'
+        },
+        {
+            name: 'Woolen sweater',
+            slug: 'sweater-1',
+            category : 'Cloths',
+            image : '/images/sweater.jpeg',
+            price:1100,
+            countInStock: 10,
+            brand : 'PAHADI',
+            rating : 4,
+            numReviews: 10,
+            Description :'High Quality cloths'
+        },
+        {
+            
+            name: 'Pahadi Hat',
+            slug: 'item-2',
+            category : 'Cloths',
+            image : '/images/topi.jpeg',
+            price:150,
+            countInStock: 10,
+            brand : 'PAHADI',
+            rating : 4.2,
+            numReviews: 10,
+            Description :'High Quality cloths'
         },
     ],
 

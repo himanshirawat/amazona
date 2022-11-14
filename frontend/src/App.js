@@ -17,7 +17,7 @@ function App() {
       <header> 
         <Navbar bg="dark" variant="dark">
           <Container >
-            <LinkContainer to = "/"><Navbar.Brand>amazona</Navbar.Brand></LinkContainer>
+            <LinkContainer to = "/"><Navbar.Brand>ecommerce</Navbar.Brand></LinkContainer>
             <Nav className="me-auto">
               <Link to="/cart" className="nav-link">
                 Cart
