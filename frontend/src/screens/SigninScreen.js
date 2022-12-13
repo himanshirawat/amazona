@@ -1,9 +1,11 @@
 import { Container, Form, Button } from "react-bootstrap";
 import {useLocation, Link, useNavigate} from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Axios } from "axios";
-import { useContext, useState } from "react";
+import  Axios  from "axios";
+import { useContext, useEffect, useState } from "react";
 import {Store} from '../Store';
+import { toast } from "react-toastify";
+import { getError } from '../utils';
 
 export  default function SigninScreen(){
     const navigate = useNavigate();
@@ -14,8 +16,8 @@ export  default function SigninScreen(){
     const [email,setEmail]= useState('');
     const [password,setPassword]= useState('');
 
-    const {state, dispatch : ctxDispatch}= useContext(Store);
-
+    const { state, dispatch : ctxDispatch}= useContext(Store);
+    const {userInfo} = state;
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -27,10 +29,19 @@ export  default function SigninScreen(){
             ctxDispatch({type: 'USER_SIGNIN', payload:data})
             localStorage.setItem('userInfo',JSON.stringify(data));
             navigate(redirect || '/');
+            
         } catch (err){
-            alert('Invalid email or password');
+
+            toast.error(getError(err));
          }
     };
+
+    useEffect(()=> {
+        if (userInfo) {
+            navigate (redirect) ;
+        }
+    }, [navigate, redirect, userInfo]);
+
     return (
         <Container className="small-container">
             <Helmet>
@@ -40,18 +51,26 @@ export  default function SigninScreen(){
             <Form onSubmit={submitHandler}>
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" required  onChange={(e) => setEmail(e.target.value)}></Form.Control>
+                    <Form.Control 
+                     type="email"
+                     required  
+                     onChange={(e) => setEmail(e.target.value)}>
+                     </Form.Control>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" required  onChange={(e) => setPassword(e.target.value)}></Form.Control>
+                    <Form.Control
+                     type="password" 
+                     required  
+                     onChange={(e) => setPassword(e.target.value)}>
+                     </Form.Control>
                 </Form.Group>
                 <div className="mb-3">
                     <Button type="submit">Sign in</Button>
                 </div>
                 <div>
                     New Customer ? {' '}
-                    <Link to={`signup?redirect=${redirect}`} >Create your account</Link>
+                    <Link to={`/signup?redirect=${redirect}`} >Create your account</Link>
                 </div>
             </Form>
         </Container>
