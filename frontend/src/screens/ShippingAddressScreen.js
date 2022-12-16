@@ -46,7 +46,7 @@ export default function ShippingAddressScreen(){
                 country,
             })
         );
-        navigate("/")
+        navigate("/payment")
     };
 
     return <div>
