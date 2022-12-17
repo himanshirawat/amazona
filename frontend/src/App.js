@@ -31,7 +31,7 @@ function App() {
     <div className='d-flex flex-column site-container'>
       <ToastContainer position="bottom-center" limit={1} ></ToastContainer>
       <header> 
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" className="fixed-top">
           <Container >
             <LinkContainer to = "/"><Navbar.Brand>ecommerce</Navbar.Brand></LinkContainer>
             <Nav className="me-auto">
