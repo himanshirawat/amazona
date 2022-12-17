@@ -72,7 +72,7 @@ export default function ShippingAddressScreen(){
                 <Form.Control value={city} onChange={(e) => setCity(e.target.value)} required></Form.Control>
             </Form.Group>
             <Form.Group classname="mb-3" controlId="postOffice">
-                <Form.Label>Post Office</Form.Label>
+                <Form.Label>Post Office / PIN Code </Form.Label>
                 <Form.Control value={postOffice} onChange={(e) => setPostOffice(e.target.value)} required></Form.Control>
             </Form.Group>
             <Form.Group classname="mb-3" controlId="country">
