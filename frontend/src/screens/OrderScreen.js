@@ -53,16 +53,15 @@ export default function OrderScreen(){
 
 
         if (!userInfo) {
-            return navigate('/login');
+            return navigate('/signin');
         }
-        if(
-            !order._id || (order._id && order._id !== orderId)
+        if(!order._id || (order._id && order._id !== orderId)
         ){
             fetchOrder();
         }
-    },[order,userInfo,orderId,navigate])
+    },[order,userInfo,orderId,navigate]);
     
-    return loading? (
+    return loading ? (
             <LoadingBox></LoadingBox>
         ): error ? (
             <MessageBox variant="danger">{error}</MessageBox>
@@ -139,7 +138,7 @@ export default function OrderScreen(){
                                         <ListGroup.Item>
                                             <Row>
                                                 <Col>Items</Col>
-                                                <Col>Rs.{order.itemsPrice.toFixed(2)}</Col>
+                                                <Col>Rs.{order.itemsPrice.toFixed}</Col>
                                             </Row>
                                         </ListGroup.Item>
                                         <ListGroup.Item>
