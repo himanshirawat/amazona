@@ -12,7 +12,7 @@ import MessageBox from "../component/MessageBox";
 const reducer=(state,action)=>{
   switch(action.type){
     case'FETCH_REQUEST' :
-      return {...state, loading : true} // to show loading box in UIfalse
+      return {...state, loading : true}; // to show loading box in UIfalse
     case 'FETCH_SUCCESS' :
       return{...state, products:action.payload, loading:false}; //action.payload contains product from backend
     case 'FETCH_FAILED' :
