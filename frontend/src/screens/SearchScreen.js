@@ -92,7 +92,7 @@ export default function SearchScreen(){
                 dispatch({ type:'FETCH_SUCCESS',payload:data});
             } catch (err) {
                 dispatch ({
-                    typr:'FETCH_FAIL',
+                    type:'FETCH_FAIL',
                     payload: getError(error),
                 });
             }
@@ -113,7 +113,7 @@ export default function SearchScreen(){
         fetchCategories();
     },[dispatch]);
 
-    const getFilterUrl = (filter) => {
+    const getFilterUrl = (filter,skipPathname) => {
         const filterPage = filter.page || page;
         const filetrCategory = filter.category || category;
         const filterQuery = filter.query || query;
@@ -121,7 +121,9 @@ export default function SearchScreen(){
         const filterPrice = filter.price || price ;
         const sortOrder = filter.order || order;
 
-        return `/search?category=${filetrCategory}&query=${filterQuery}&price=${filterPrice}&page=${filterPage}&rating=${filterRating}&order=${sortOrder}`;
+        return `${
+            skipPathname ? '': '/search?'
+         } category=${filetrCategory}&query=${filterQuery}&price=${filterPrice}&page=${filterPage}&rating=${filterRating}&order=${sortOrder}`;
     };
     
     return <div>
@@ -159,7 +161,7 @@ export default function SearchScreen(){
                     {prices.map((p)=>(
                         <li key={p.value}>
                             <Link to={getFilterUrl({price : p.value})}
-                                  className={p === price ? 'text-bold':''}
+                                  className={p.value === price ? 'text-bold':''}
                             >{p.name}</Link>
                         </li>
                     ))}
@@ -207,8 +209,9 @@ export default function SearchScreen(){
                                     {rating !== 'all' && ':' + rating + '& up'}
                                     {query !== 'all' || 
                                     category !== 'all' || 
-                                    price !== 'all'|| 
-                                    rating !== 'all' ? (
+                                    rating !== 'all' ||
+                                    price !== 'all' 
+                                     ? (
                                         <Button variant="light" onClick={()=> navigate('/search')}>
                                             <i className="fas fa-times-circle"></i>
                                         </Button>
@@ -221,7 +224,7 @@ export default function SearchScreen(){
                                 <select value={order} onChange={(e)=> {
                                     navigate(getFilterUrl({order:e.target.value}));
                                 }}>
-                                    <option value="newest"> New Arrivals</option>
+                                    <option value="newest"> Newest Arrivals</option>
                                     <option value="lowest">Price: Low to High</option>
                                     <option value="highest">Price: High to Low</option>
                                     <option value="top-rated">Avg. Customer Reviews</option>
@@ -250,7 +253,7 @@ export default function SearchScreen(){
                                         pathname:'/search',
                                         search: getFilterUrl({page:x+1},true),}}>
                                     <Button 
-                                        className={Number(page) === x+1?'text-bold':''} 
+                                        className={Number(page) === x+1 ?'text-bold':''} 
                                         variant='light'>
                                       {x+1} 
                                     </Button>
