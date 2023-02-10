@@ -24,6 +24,7 @@ import ProtectedRoute from "./component/ProductedRoute";
 import AdminRoute from "./component/AdminRoute";
 import DashboardScreen from "./screens/DashboardScreen";
 import ProductListScreen from "./screens/ProductListScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
 
 
 function App() {
@@ -146,7 +147,7 @@ function App() {
           {/* ADMIN ROUTES  */}
           <Route path="/admin/dashboard" element={<AdminRoute><DashboardScreen /></AdminRoute>} />
           <Route path="/admin/products" element={<AdminRoute><ProductListScreen /></AdminRoute>} />
-          
+          <Route path="/admin/product/:id" element={<AdminRoute><ProductEditScreen /></AdminRoute>} />
           
           <Route path="/" element={<HomeScreen />} />
         </Routes>
