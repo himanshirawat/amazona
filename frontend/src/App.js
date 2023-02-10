@@ -142,8 +142,12 @@ function App() {
           <Route path="/orderhistory" element={<ProtectedRoute><OrderHistoryScreen /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><ProfileScreen /></ProtectedRoute>} />
           <Route path="/search" element={<SearchScreen/>} />
-          <Route path="/admin/dashboard" elemnet={<AdminRoute><DashboardScreen /></AdminRoute>} />
-          <Route path="/admin/products" elemnet={<AdminRoute><ProductListScreen /></AdminRoute>} />
+
+          {/* ADMIN ROUTES  */}
+          <Route path="/admin/dashboard" element={<AdminRoute><DashboardScreen /></AdminRoute>} />
+          <Route path="/admin/products" element={<AdminRoute><ProductListScreen /></AdminRoute>} />
+          
+          
           <Route path="/" element={<HomeScreen />} />
         </Routes>
         </Container>
