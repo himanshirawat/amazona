@@ -28,11 +28,12 @@ import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
+import MapScreen from "./screens/MapScreen";
 
 
 function App() {
   const { state,dispatch:ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;
+  const { fullBox, cart, userInfo } = state;
 
   const signoutHandler = () => {
     ctxDispatch({type: 'USER_SIGNOUT'});
@@ -59,7 +60,16 @@ function App() {
 
   return (
     <Router>
-    <div className= {sidebarIsOpen ? 'd-flex flex-column site-container active-cont' : 'd-flex flex-column site-container'} >
+    <div className= {
+      sidebarIsOpen 
+          ?  fullBox
+            ? 'site-container active-cont d-flex flex-column full-box' 
+            : 'site-container active-cont d-flex flex-column '
+          : fullBox
+            ? 'site-container d-flex flex-column full-box' 
+            : 'site-container d-flex flex-column'
+          } >
+
       <ToastContainer position="bottom-center" limit={1} ></ToastContainer>
       <header> 
         <Navbar bg="dark" variant="dark" expand="lg" >
@@ -141,6 +151,7 @@ function App() {
           <Route path="/signup" element={<SignupScreen />} />
           <Route path="/shipping" element={<ShippingAddressScreen />} />
           <Route path="/payment" element={<PaymentMethodScreen />} />
+          <Route path="/map" elemnet={<ProtectedRoute><MapScreen /></ProtectedRoute>}></Route>
           <Route path="/placeorder" element={<PlaceOrderScreen />} />
           <Route path="/order/:id" element={<ProtectedRoute><OrderScreen /></ProtectedRoute>} />
           <Route path="/orderhistory" element={<ProtectedRoute><OrderHistoryScreen /></ProtectedRoute>} />

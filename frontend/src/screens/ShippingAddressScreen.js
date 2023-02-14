@@ -9,6 +9,7 @@ export default function ShippingAddressScreen(){
     const navigate = useNavigate();
     const {state, dispatch:ctxDispatch } = useContext(Store);
     const {
+        fullBox,
         userInfo,
         cart : {shippingAddress },
     } = state;
@@ -34,6 +35,7 @@ export default function ShippingAddressScreen(){
                 city,
                 postOffice,
                 country,
+                location: shippingAddress.location,
             },
         });
         localStorage.setItem(
@@ -44,10 +46,15 @@ export default function ShippingAddressScreen(){
                 city,
                 postOffice,
                 country,
+                location: shippingAddress.location,
             })
         );
         navigate("/payment")
     };
+
+    useEffect(() => {
+        ctxDispatch({type:"SET_FULLBOX_OFF"});
+    },[ctxDispatch,fullBox]);
 
     return <div>
         <Helmet>
@@ -79,11 +86,31 @@ export default function ShippingAddressScreen(){
                 <Form.Label>Country</Form.Label>
                 <Form.Control value={country} onChange={(e) => setCountry(e.target.value)} required></Form.Control>
             </Form.Group>
+
+            <div className='mb-3'>
+                &nbsp;
+                <Button
+                    id="chooseOnMap"
+                    type="button"
+                    variant="dark"
+                    onClick={() => navigate("/map")}>
+                    Choose Location On Map
+                </Button>
+                {shippingAddress.location && shippingAddress.location.lat 
+                ? ( <div>
+                        LAT:{shippingAddress.location.lat}
+                        LAG:{shippingAddress.location.lng}
+                    </div>
+                ) : (
+                    <div>No location</div>
+                )}
+            </div>
+
             <div className="mb-3 mt-3">
                 <Button variant="primary" type="submit">Continue</Button>
             </div>
             
         </Form>
-        </div>      
+        </div>
     </div>;
 }

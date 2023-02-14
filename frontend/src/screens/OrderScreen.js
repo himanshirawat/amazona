@@ -112,7 +112,17 @@ export default function OrderScreen(){
                                     {order.shippingAddress.address},
                                     {order.shippingAddress.city},
                                     {order.shippingAddress.postOffice},
-                                    {order.shippingAddress.country},
+                                    {order.shippingAddress.country}
+                                    &nbsp;
+                                    {order.shippingAddress.location && 
+                                        order.shippingAddress.location.lat && (
+                                            <a
+                                                target = "_new"
+                                                href={`https://maps.google.com?q=${order.shippingAddress.location.lat},${order.shippingAddress.location.lng}`}
+                                            > 
+                                                Show On Map
+                                            </a>
+                                        )} 
                                 </Card.Text>
                                 {order.isDelivered ? (
                                     <MessageBox variant="success">Delivered at {order.deliveredAt}</MessageBox>

@@ -29,6 +29,7 @@ const reducer = (state, action) => {
         return {...state, loadingCreate: false,};
       case 'CREATE_FAIL' :
         return {...state, loadingCreate: false};
+
       case 'DELETE_REQUEST' :
         return {...state, loadingDelete:true, successDelete: false};
       case 'DELETE_SUCCESS' :
@@ -43,7 +44,7 @@ const reducer = (state, action) => {
 };
 
 export default function ProductListScreen(){
-    const [{ loading, error, products, pages , loadingCreate ,loadingDelete, successDelete}, dispatch] = useReducer(reducer,{
+    const [{ loading, error, products, pages, loadingCreate ,loadingDelete, successDelete}, dispatch] = useReducer(reducer,{
         loading: true,
         error: '',
     });
@@ -72,27 +73,29 @@ export default function ProductListScreen(){
         }
     },[page, userInfo,successDelete]);
 
-    const createHandler = async () => {
-        if (window.confirm('Are you sure to create ? ')) {
-            try {
-                dispatch({type: 'CREATE_REQUEST'});
-                const {data} = await axios.post(
-                    '/api/products',
-                    {},
-                    {
-                        headers: {Authorization: `Bearer ${userInfo.token}`},
-                    });
-                    toast.success('product created successfully');
-                    dispatch({ type: 'CREATE_SUCCESS' });
-                    navigate(`/admin/product/${data.product._id}`);
-            } catch (err) {
-                toast.error(getError(error));
-                dispatch({
-                    type: 'CREATE_FAIL',
-                });
-            }
-        }
-    };
+    
+  const createHandler = async () => {
+    if (window.confirm('Are you sure to create?')) {
+      try {
+        dispatch({ type: 'CREATE_REQUEST' });
+        const { data } = await axios.post(
+          '/api/products',
+          {},
+          {
+            headers: { Authorization: `Bearer ${userInfo.token}` },
+          }
+        );
+        toast.success('product created successfully');
+        dispatch({ type: 'CREATE_SUCCESS' });
+        navigate(`/admin/product/${data.product._id}`);
+      } catch (err) {
+        toast.error(getError(error));
+        dispatch({
+          type: 'CREATE_FAIL',
+        });
+      }
+    }
+  };
 
     const deleteHandler = async (product) => {
         if (window.confirm('Are you sure to delete ? ')) {
@@ -117,7 +120,7 @@ export default function ProductListScreen(){
                 <Col className="col text-end">
                     <div>
                         <Button type="button" onClick={createHandler}>
-                        Created Product
+                        Create Product
                         </Button>
                     </div>
                 </Col>

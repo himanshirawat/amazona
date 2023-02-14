@@ -1,4 +1,4 @@
-import express, { query } from 'express';
+import express from 'express';
 import Product from '../models/productModel.js';
 import expressAsyncHandler from 'express-async-handler';
 import { isAuth, isAdmin} from '../utils.js';
@@ -18,7 +18,7 @@ productRouter.post(
     const newProduct = new Product({
       name: 'sample name ' + Date.now(),
       slug: 'sample-name-' + Date.now(),
-      image: '/images/sweater.jpeg',
+      image: '/images/p1.jpg',
       price: 0,
       category: 'sample category',
       brand: 'sample brand',
@@ -28,7 +28,7 @@ productRouter.post(
       description: 'sample description',
     });
     const product = await newProduct.save();
-    res.send({ message: 'Product Created',product });
+    res.send({ message: 'Product Created', product });
   })
 );
 
