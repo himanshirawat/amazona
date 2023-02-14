@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema(
     brand: { type: String,required: true},
     rating: { type: Number,required: true},
     numReviews: { type: Number,required: true},
-    Description: { type: String,required: true},
+    Description: { type: String,},
   },
   {
     timestamps: true,

@@ -31,7 +31,7 @@ function reducer(state, action) {
             return state;
     }
 }
-
+ 
 export default function OrderScreen(){
     const{state} = useContext(Store);
     const{userInfo} = state;
