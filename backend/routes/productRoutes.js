@@ -78,7 +78,7 @@ productRouter.post(
     const productId = req.params.id;
     const product = await Product.findById(productId);
     if (product) {
-      if (product.numReviews.find((x) => x.name === req.user.name)) {
+      if (product.reviews.find((x) => x.name === req.user.name)) {
         return res 
          .status(400)
          .send({message:'You already submitted a review'});
