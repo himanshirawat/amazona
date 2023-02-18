@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect , useReducer, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import {Row, Col, Form, ListGroup, ListGroupItem, Card, Badge, Button, FloatingLabel,} from "react-bootstrap";
+import {Row, Col, Form, ListGroup, Card, Badge, Button, FloatingLabel,} from "react-bootstrap";
 import Rating from "../component/Rating";
 import {Helmet} from 'react-helmet-async';
 import MessageBox from "../component/MessageBox";
@@ -37,6 +37,7 @@ function ProductScreen(){
 
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
+  const [selectedImage, setSelectedImage] = useState('');
 
   const navigate = useNavigate();
   const params = useParams();
@@ -115,46 +116,69 @@ function ProductScreen(){
       )  : ( 
         <div>
           <Row>
-            <Col md ={6}><img className = "img-large" src={product.image} alt={product.name}></img></Col>
+            <Col md ={6}><img className = "img-large" src={selectedImage || product.image} alt={product.name}></img></Col>
             <Col md ={3}>
               <ListGroup variant="flush">
-                <ListGroupItem>
+                
+                <ListGroup.Item>
                   <Helmet>
                     <title>{product.name}</title>
                   </Helmet>
-                  <h1>{product.name}</h1></ListGroupItem>
-                <ListGroupItem>
+                  <h1>{product.name}</h1></ListGroup.Item>
+                
+                <ListGroup.Item>
                   <Rating rating = {product.rating} numReviews={product.numReviews}></Rating> 
-                </ListGroupItem>
-                <ListGroupItem>Price: Rs.{product.price}</ListGroupItem>
-                <ListGroupItem>Description:<p>{product.Description}</p></ListGroupItem>
+                </ListGroup.Item>
+
+                <ListGroup.Item>Price: Rs.{product.price}</ListGroup.Item>
+                
+                <ListGroup.Item>
+                  <Row xs={1} md={2} className="g-2">
+                    {[product.image, ...product.images].map((x) => (
+                      <Col key={x}>
+                        <Card>
+                          <Button
+                            className="thumbnail"
+                            type="button"
+                            variant="light"
+                            onClick={() => setSelectedImage(x)}>
+                              <Card.Img variant="top" src={x} alt="product"></Card.Img>
+                            </Button>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
+                </ListGroup.Item>
+
+                <ListGroup.Item>Description:<p>{product.Description}</p></ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md ={3}>
               <Card>
                 <Card.Body>
                 <ListGroup variant="flush">
-                <ListGroupItem>
+                
+                <ListGroup.Item>
                   <Row>
                     <Col>Price :</Col>
                     <Col>Rs.{product.price}</Col>
                   </Row>
-                </ListGroupItem>
+                </ListGroup.Item>
                 </ListGroup>
                 <ListGroup variant="flush">
-                <ListGroupItem>
+                <ListGroup.Item>
                   <Row>
                     <Col>Status :</Col>
                     <Col>{product.countInStock>0 ?<Badge bg="success">In Stock</Badge> : <Badge bg="danger">Out of Stock</Badge> }</Col>
                   </Row>
-                </ListGroupItem>
+                </ListGroup.Item>
 
                 {product.countInStock > 0 && (
-                  <ListGroupItem>
+                  <ListGroup.Item>
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} variant = "primary">Add to Cart</Button>
                     </div>
-                  </ListGroupItem>
+                  </ListGroup.Item>
                 )}
  
                 </ListGroup>
