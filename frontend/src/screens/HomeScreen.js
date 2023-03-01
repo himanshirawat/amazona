@@ -1,4 +1,4 @@
-import { useEffect , useReducer } from "react";
+import {useEffect , useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
 import {Row, Col} from "react-bootstrap";
@@ -6,6 +6,8 @@ import Product from "../component/Product";
 import {Helmet} from 'react-helmet-async';
 import LoadingBox from "../component/LoadingBox";
 import MessageBox from "../component/MessageBox";
+import {CgMouse} from "react-icons/cg";
+import "../style/HomeScreen.css";
 
 
 //reducer function
@@ -43,12 +45,22 @@ function HomeScreen(){
     };
     fetchData();
   },[]);
-    return <div>
+
+    return ( 
+    <>
+    <div className="banner">
+      <p>Welcome to Ecommerce</p>
+        <h1>Find Amazing Products Below</h1>
+        <a href="#products">
+          <button>Scroll<CgMouse /></button>
+        </a>
+    </div>
+    <div>
       <Helmet>
         <title>Online Store</title>
       </Helmet>
-        <h1>Featured Products</h1>
-        <div className="products">
+        <h2 className="homeheading">Featured Products</h2>
+        <div className="products" id="products">
         {
           loading ? (
           <LoadingBox />
@@ -65,6 +77,6 @@ function HomeScreen(){
         )}
         </div>
     </div>;
-}
-
+</>
+);};
 export default HomeScreen;

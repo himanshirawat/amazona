@@ -4,6 +4,7 @@ import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Store } from "../Store";
 import Rating from "./Rating";
+import "../style/HomeScreen.css"
 
 function Product(props){
     const {product} = props;
@@ -26,7 +27,7 @@ function Product(props){
         });
     };
     return (
-        <Card>
+        <Card className="productCard">
             <Link to={`/product/${product.slug}`}>
                 <img src = {product.image} className="card-img-top" alt={product.name}></img>
             </Link>
@@ -42,7 +43,6 @@ function Product(props){
                     </Button>
                 ): (<Button onClick={()=> addtoCartHandler(product)}>Add to cart</Button>
                 )}
-                
             </Card.Body>
         </Card>
     )

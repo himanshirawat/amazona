@@ -1,0 +1,77 @@
+.banner{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    height: 100vmin;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.banner > h1 {
+    margin: 5vmax;
+    font: 600 2.5vmax "Roboto";
+}
+
+.banner > p{
+    font: 300 1.4vmax "Lucida Sans";
+}
+
+.banner > a >button {
+    margin-bottom: 5vmax;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid white;
+    padding: 1vmax;
+    transition: all 0.5s;
+    width: 9vmax;
+    font: 500 1vmax "Roboto";
+
+}
+
+.banner > a > button:hover {
+    background-color: rgb(2,0,36);
+    color: white;
+}
+
+.banner::after {
+    content: "";
+    width: 100vw;
+    height: 100vmin;
+    background-color: #ffffff !important;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    max-width: 100%;
+    -webkit-clip-path: polygon(98% 85%, 100% 82%, 100% 100%, 0% 100%);
+    clip-path: polygon(98% 85%, 100% 82%, 100% 100%, 0% 100%);
+}
+
+.homeheading {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4vmax;
+    border-bottom: 1px solid rgba(2,0,36,1);
+    width: 20vmax;
+    padding: 1vmax;
+    margin: 5vmax auto ;
+}
+.products{
+    display: flex;
+    margin: 2vmax auto;
+    width: 80vw;
+    flex-wrap: wrap;
+}
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+}
+.productCard:hover {
+    box-shadow: 0 0 5px rgba(2,0,36,1);
+    transform: translateY();
+}
