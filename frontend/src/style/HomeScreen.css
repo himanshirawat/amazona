@@ -36,11 +36,6 @@
     color: white;
 }
 
-.card-img-top{
-   width: "10rem" !important;
-   height: "15rem" !important;
-   background-size: contain !important;
-}
 .banner::after {
     content: "";
     width: 100vw;
@@ -63,6 +58,8 @@
     padding: 1vmax;
     margin: 5vmax auto ;
 }
+
+
 .products{
     display: flex;
     margin: 2vmax auto;
