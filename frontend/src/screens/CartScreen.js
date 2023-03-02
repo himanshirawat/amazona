@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Store } from "../Store";
 import { Helmet } from "react-helmet-async";
-import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import MessageBox from "../component/MessageBox";
 import { Link, useNavigate} from "react-router-dom";
 import axios from "axios";
@@ -34,7 +34,7 @@ export default function CartScreen(){
         navigate('/signin?redirect=/shipping');
     }
 
-    return  <div>
+    return  <Container className="mt-3">
         <Helmet>
           <title>Shopping Cart</title>
         </Helmet>
@@ -109,6 +109,6 @@ export default function CartScreen(){
                 </Card>
             </Col>
           </Row>
-    </div>
+    </Container>
     
 }

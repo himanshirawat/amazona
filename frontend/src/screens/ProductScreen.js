@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect , useReducer, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import {Row, Col, Form, ListGroup, Card, Badge, Button, FloatingLabel,} from "react-bootstrap";
+import {Row, Col, Form, ListGroup, Card, Badge, Button, FloatingLabel, Container,} from "react-bootstrap";
 import Rating from "../component/Rating";
 import {Helmet} from 'react-helmet-async';
 import MessageBox from "../component/MessageBox";
@@ -109,12 +109,13 @@ function ProductScreen(){
       }
     };
     
-    return loading ? (
+    return <Container>
+    {loading ? (
       <LoadingBox />
       ) : error ? (
         <MessageBox varient="danger">{error}</MessageBox>
       )  : ( 
-        <div>
+        <div className="mt-3">
           <Row>
             <Col md ={6}><img className = "img-large" src={selectedImage || product.image} alt={product.name}></img></Col>
             <Col md ={3}>
@@ -251,8 +252,9 @@ function ProductScreen(){
               )}
             </div>
           </div>
-        </div>
-    );
+          </div>
+        )}
+        </Container>
 }
 
 export default ProductScreen;

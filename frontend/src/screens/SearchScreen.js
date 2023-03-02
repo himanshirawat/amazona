@@ -126,7 +126,7 @@ export default function SearchScreen(){
          } category=${filetrCategory}&query=${filterQuery}&price=${filterPrice}&page=${filterPage}&rating=${filterRating}&order=${sortOrder}`;
     };
     
-    return <div>
+    return <div className='container mt-3'>
         <Helmet>
             <title> Search Products</title>
         </Helmet>

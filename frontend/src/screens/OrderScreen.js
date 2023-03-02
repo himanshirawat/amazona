@@ -1,6 +1,6 @@
 import axios  from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
-import { Card, Col, ListGroup, Row ,Button} from "react-bootstrap";
+import { Card, Col, ListGroup, Row ,Button, Container} from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {useNavigate, useParams } from "react-router-dom";
@@ -91,7 +91,8 @@ export default function OrderScreen(){
         }
     }
     
-    return loading ? (
+    return <Container className="mt-3">
+    {loading ? (
             <LoadingBox></LoadingBox>
         ): error ? (
             <MessageBox variant="danger">{error}</MessageBox>
@@ -216,5 +217,7 @@ export default function OrderScreen(){
                 
                     </Row>
                 </div>
-            );
+
+            )}
+            </Container>
 }

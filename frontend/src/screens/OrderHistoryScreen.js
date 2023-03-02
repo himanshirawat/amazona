@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import LoadingBox from '../component/LoadingBox';
@@ -50,7 +50,7 @@ export default function OrderHistoryScreen(){
     },[userInfo]);
 
     return (
-        <div>
+        <Container className='mt-3'>
             <Helmet>
                 <title>Order History</title>
             </Helmet>
@@ -91,6 +91,6 @@ export default function OrderHistoryScreen(){
                     </tbody>
                 </table>
             )}
-        </div>
+        </Container>
     );
 }

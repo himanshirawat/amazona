@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -76,7 +76,7 @@ export default function UserListScreen(){
     };
 
     return (
-        <div>
+        <Container className="mt-3">
             <Helmet>
                 <title>Users</title>
             </Helmet>
@@ -124,6 +124,6 @@ export default function UserListScreen(){
                     </tbody>
                 </table>
             )}
-        </div>
+        </Container>
     );
 }

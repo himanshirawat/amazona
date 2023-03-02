@@ -4,7 +4,7 @@ import { getError } from '../utils';
 import Chart from 'react-google-charts';
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
-import {Row, Col, Card} from 'react-bootstrap';
+import {Row, Col, Card, Container} from 'react-bootstrap';
 import { Store } from '../Store';
 
 const reducer = (state,action) => {
@@ -51,7 +51,7 @@ export default function DashboardScreen() {
     },[userInfo]);
 
     return (
-        <div>
+        <Container className="mt-3">
             <h1>Dashboard</h1>
             {loading ? (
                 <LoadingBox />
@@ -134,7 +134,7 @@ export default function DashboardScreen() {
                     </div>
                 </>
             )}
-        </div>
+        </Container>
     );
 }
 

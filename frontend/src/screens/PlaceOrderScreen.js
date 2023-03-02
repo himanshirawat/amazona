@@ -1,6 +1,6 @@
 import Axios  from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
-import { Button, Card, Col, ListGroup, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -78,7 +78,7 @@ export default function PlaceOrderScreen(){
         }
     },[cart,navigate]);
 
-    return <div>
+    return <Container className="mt-3">
         <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
         <Helmet>
             <title>Preview Order</title>
@@ -175,5 +175,5 @@ export default function PlaceOrderScreen(){
             </Card>
             </Col>
         </Row>
-    </div>;
+    </Container>;
 }

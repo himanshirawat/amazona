@@ -1,6 +1,6 @@
 import React,{useContext, useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet-async';
-import  { Form, Button } from 'react-bootstrap';
+import  { Form, Button, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
 import CheckoutSteps from '../component/CheckoutSteps';
@@ -56,7 +56,7 @@ export default function ShippingAddressScreen(){
         ctxDispatch({type:"SET_FULLBOX_OFF"});
     },[ctxDispatch,fullBox]);
 
-    return <div>
+    return <Container className="mt-3">
         <Helmet>
             <title>Shipping Address</title>
         </Helmet>
@@ -112,5 +112,5 @@ export default function ShippingAddressScreen(){
             
         </Form>
         </div>
-    </div>;
+    </Container>;
 }

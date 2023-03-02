@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {useNavigate} from 'react-router-dom';
-import { Form , Button} from 'react-bootstrap';
+import { Form , Button, Container} from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import CheckoutSteps from '../component/CheckoutSteps';
 import {Store} from '../Store';
@@ -27,7 +27,7 @@ export default function PaymentMethodScreen(){
         localStorage.setItem('paymentMethod', paymentMethodName);
         navigate('/placeorder');
     };
-    return <div>
+    return <Container className="mt-3">
             <CheckoutSteps step1 step2 step3></CheckoutSteps>
             <div className="container small-container">
                 <Helmet>
@@ -62,6 +62,6 @@ export default function PaymentMethodScreen(){
                     </div>
                 </Form>
             </div>
-        </div>
+        </Container>
     
 }
