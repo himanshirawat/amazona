@@ -50,9 +50,7 @@ function HomeScreen(){
     <div className="banner">
       <p>Welcome to Ecommerce</p>
         <h1>Find Amazing Products Below</h1>
-        <a href="#products">
-          <button>Scroll<CgMouse /></button>
-        </a>
+        <a href="#products"><button>Scroll<CgMouse /></button></a>
     </div>
     <div>
       <Helmet>
