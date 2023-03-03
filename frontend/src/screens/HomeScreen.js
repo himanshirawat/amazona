@@ -1,6 +1,5 @@
 import {useEffect , useReducer } from "react";
 import axios from "axios";
-import logger from "use-reducer-logger";
 import {Row, Col} from "react-bootstrap";
 import Product from "../component/Product";
 import {Helmet} from 'react-helmet-async';
@@ -26,10 +25,10 @@ const reducer=(state,action)=>{
 };
 
 function HomeScreen(){
-  const [{loading,error,products},dispatch] = useReducer(logger(reducer),{
+  const [{loading,error,products},dispatch] = useReducer(reducer,{
     products :[],
     loading :true,
-    error :'',
+    error :"",
   });
   useEffect(()=>{
     const fetchData = async () => {
