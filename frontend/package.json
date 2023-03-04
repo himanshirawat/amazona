@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "proxy": "https://amazona-clone.onrender.com",
+  "homepage": "https://www.andreasreiterer.at/react-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
