@@ -5,13 +5,13 @@ import { isAuth, isAdmin} from '../utils.js';
 
 const productRouter = express.Router();
 
-productRouter.get('https://amazona-clone.onrender.com/', async (req, res) => {
+productRouter.get('/', async (req, res) => {
   const products = await Product.find();
   res.send(products);
 });
 
 productRouter.post(
-  'https://amazona-clone.onrender.com/',
+  '/',
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
