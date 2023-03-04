@@ -1,4 +1,4 @@
-import {useEffect , useReducer } from "react";
+import {Fragment, useEffect , useReducer } from "react";
 import axios from "axios";
 import {Row, Col} from "react-bootstrap";
 import Product from "../component/Product";
@@ -46,7 +46,7 @@ function HomeScreen(){
   },[]);
 
     return ( 
-    <>
+    <Fragment>
     <div className="banner">
       <p>Welcome to Ecommerce</p>
         <h1>Find Amazing Products Below</h1>
@@ -74,6 +74,6 @@ function HomeScreen(){
         )}
         </div>
     </div>;
-</>
+</Fragment>
 );};
 export default HomeScreen;
