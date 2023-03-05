@@ -1,4 +1,4 @@
-import {Fragment, useEffect , useReducer } from "react";
+import {useEffect , useReducer } from "react";
 import axios from "axios";
 import {Row, Col} from "react-bootstrap";
 import Product from "../component/Product";
@@ -15,7 +15,7 @@ const reducer=(state,action)=>{
     case'FETCH_REQUEST' :
       return {...state, loading : true}; // to show loading box in UIfalse
     case 'FETCH_SUCCESS' :
-      return{...state, products:action.payload, loading:false}; //action.payload contains product from backend
+      return{...state, products : action.payload, loading:false}; //action.payload contains product from backend
     case 'FETCH_FAILED' :
       return{...state, loading : false, error : action.payload };
     default:
@@ -30,11 +30,13 @@ function HomeScreen(){
     loading :true,
     error :"",
   });
+  // const [products, setProducts] = useState([]);
+
   useEffect(()=>{
     const fetchData = async () => {
       dispatch({type: 'FETCH_REQUEST'})
       try {
-        const result = await axios.get('/api/products');
+        const result = await axios.get("/api/products");
         dispatch({type:'FETCH_SUCCESS',payload: result.data});
       } catch (err) {
         dispatch({type:'FETCH_FAILED',payload: err.message});
@@ -46,7 +48,7 @@ function HomeScreen(){
   },[]);
 
     return ( 
-    <Fragment>
+    <div>
     <div className="banner">
       <p>Welcome to Ecommerce</p>
         <h1>Find Amazing Products Below</h1>
@@ -62,7 +64,7 @@ function HomeScreen(){
           loading ? (
           <LoadingBox />
           ) : error ? (
-            <MessageBox varient="danger">{error}</MessageBox>
+            <MessageBox variant="danger">{error}</MessageBox>
           ) : (
             <Row>
               {products.map((product) => (
@@ -73,7 +75,7 @@ function HomeScreen(){
             </Row>
         )}
         </div>
-    </div>;
-</Fragment>
-);};
+    </div>
+</div>
+);}
 export default HomeScreen;
