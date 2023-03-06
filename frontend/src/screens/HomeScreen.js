@@ -60,8 +60,7 @@ function HomeScreen(){
       </Helmet>
         <h2 className="homeheading">Featured Products</h2>
         <div className="products" id="products">
-        {
-          loading ? (
+        { loading ? (
           <LoadingBox />
           ) : error ? (
             <MessageBox variant="danger">{error}</MessageBox>

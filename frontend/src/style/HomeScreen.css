@@ -1,7 +1,7 @@
 .banner{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    height: 90.89vmin;
+    height: 90vmin;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     font: 300 1.4vmax "Lucida Sans";
 }
 
-.banner > a >button {
+.banner > a > button {
     margin-bottom: 5vmax;
     cursor: pointer;
     background-color: white;
@@ -28,25 +28,12 @@
     transition: all 0.5s;
     width: 9vmax;
     font: 500 1vmax "Roboto";
-
+ 
 }
 
 .banner > a > button:hover {
     background-color: rgb(2,0,36);
     color: white;
-}
-
-.banner::after {
-    content: "";
-    width: 100vw;
-    height: 99vmin;
-    background-color: #ffffff !important;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    max-width: 100%;
-    -webkit-clip-path: polygon(98% 85%, 100% 82%, 100% 100%, 0% 100%);
-    clip-path: polygon(98% 85%, 100% 82%, 100% 100%, 0% 100%);
 }
 
 .homeheading {

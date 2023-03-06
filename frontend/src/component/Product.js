@@ -45,7 +45,7 @@ function Product(props){
                 )}
             </Card.Body>
         </Card>
-    )
+    );
 }
 
 export default Product;
