@@ -18,17 +18,17 @@ The E-commerce website can be [viewed online here](https://e-commerce-6g18.onren
 Here are screenshots that show the E-commerce demo application in use.
 
 **Home Page**
-![Home Page](/screenshots/homePage.png?raw=true "Optional Title")
+![Home Page](/photos/home.png?raw=true "Optional Title")
 
 ---
 
 **Item Detail Page**
-![Item Detail](/screenshots/itemDetail.png?raw=true "Optional Title")
+![Item Detail](/photos/itemDetail.png?raw=true "Optional Title")
 
 ---
 
 **Shopping Cart**
-![Shopping Cart](/screenshots/shoppingCart.png?raw=true "Shopping Cart")
+![Shopping Cart](/photos/shoppingCart.png?raw=true "Shopping Cart")
 
 ## Getting Started
 To get started  you can simply clone this `amazona` repository and install the dependencies.
