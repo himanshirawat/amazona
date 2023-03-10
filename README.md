@@ -20,7 +20,7 @@ Here are screenshots that show the E-commerce demo application in use.
 ---
 
 **Item Detail Page**
-![Item Detail](/photos/Item Details.png "Optional Title")
+![Item Detail](/photos/ItemDetails.png "Optional Title")
 
 ---
 
@@ -30,7 +30,7 @@ Here are screenshots that show the E-commerce demo application in use.
 ---
 
 **Order Detail Screen**
-![Order Preview Screen](/photos/Order Details.png?raw=true "Order Screen")
+![Order Preview Screen](/photos/OrderDetails.png?raw=true "Order Screen")
 
 ## Getting Started
 To get started  you can simply clone this `amazona` repository and install the dependencies.
