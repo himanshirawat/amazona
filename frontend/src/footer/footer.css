@@ -1,11 +1,21 @@
 footer{
-    margin-top: 10vmax;
-    padding: 2vmax;
-    background-color: rgb(34,33,33);
-    color: white;
+    /* margin-top: 10vmax;
+    padding: 2vmax; */
+    background-color: rgb(82, 172, 82);
+    font-weight: bold;
     align-items: center;
     display: flex;
+    width: 100%;
+    margin: 0px auto;
+    padding: 20px 0px;
 }
+
+h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4vmax;
+    text-decoration: underline;
+}
+
 
 .leftfooter{
     width: 20%;
@@ -13,10 +23,6 @@ footer{
 
     flex-direction:column;
     align-items: center;
-}
-
-.leftfooter > h4{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .leftfooter > p{
@@ -29,10 +35,10 @@ footer{
     text-align: center;
 }
 
-.midfooter > h1 {
-    font-size: 4vmax;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(34, 204, 77);
+.midfooter > .logo {
+    height: 30%;
+    width: 30%;
+    border-radius: 50%;
 }
 
 .midfooter > p{
@@ -45,12 +51,6 @@ footer{
     display: flex;
     flex-direction: column ;
     align-items: center;
-}
-
-.rightfooter > h4 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.4vmax;
-    text-decoration: underline;
 }
 
 .rightfooter > a{

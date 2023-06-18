@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
-import { Col, Row , Button} from "react-bootstrap";
+import { Col, Row , Button, Container} from "react-bootstrap";
 import { useLocation , Link, useNavigate} from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingBox from "../component/LoadingBox";
 import MessageBox from "../component/MessageBox";
 import { Store } from "../Store";
 import { getError } from "../utils";
+import "../style/newproduct.css";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -111,15 +112,15 @@ export default function ProductListScreen(){
             }
         }
     };
-
+ 
     return (
-        <div>
+      <Container className="mt-3">
             <h1>Products</h1>
             <Row>
                 <Col><h3> Products</h3></Col>
                 <Col className="col text-end">
                     <div>
-                        <Button type="button" onClick={createHandler}>
+                        <Button type="button" className="bg-success" onClick={createHandler}>
                         Create Product
                         </Button>
                     </div>
@@ -174,17 +175,21 @@ export default function ProductListScreen(){
                         ))}
                     </tbody>
                 </table>
-                <div>
-                    {[...Array(pages).keys()].map((x) => (
-                        <Link classname={x+1 === Number(page) ? 'btn text-bold' : 'btn'}
+                
+                <div className="pages"><table>
+                    {  
+                    [...Array(pages).keys()].map((x) => (
+                     <th>
+                        <Link classname={x+1 === Number(page) ? 'btn text-bold ' : 'btn'} 
                               key = {x+1}
                               to={`/admin/products?page=${x+1}`}>
                             {x+1}
                         </Link>
-                    ))}
+                        </th>
+                    )) }    </table>   
                 </div>
                 </>
             )}
-        </div>
+        </Container>
     );
 }

@@ -50,13 +50,13 @@ function HomeScreen(){
     return ( 
     <div>
     <div className="banner">
-      <p>Welcome to Ecommerce</p>
+      <h2>Welcome to HillBasket</h2>
         <h1>Find Amazing Products Below</h1>
         <a href="#products"><button>Scroll<CgMouse /></button></a>
     </div>
     <div>
       <Helmet>
-        <title>Online Store</title>
+        <title>Hill Basket</title>
       </Helmet>
         <h2 className="homeheading">Featured Products</h2>
         <div className="products" id="products">
@@ -73,7 +73,7 @@ function HomeScreen(){
               ))}
             </Row>
         )}
-        </div>
+        </div> 
     </div>
 </div>
 );}

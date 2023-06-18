@@ -5,3 +5,25 @@ header{
 .brand{
     color : rgb(34, 204, 77);
 }
+
+.logo{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%; 
+    padding: 2px;
+    margin: 2px;
+  }
+
+.navbar{
+    background-color: rgb(82, 172, 82);
+}
+
+.sidebar-header{
+    margin: 30px;
+    
+}
+
+.sidebar{
+    color: white;
+
+}

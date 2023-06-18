@@ -1,0 +1,10 @@
+.pages > table{
+    justify-self: center;
+    margin: 30px;
+    text-decoration: none;
+    color: black ;
+}
+
+th{
+    margin: 12px;
+}

@@ -32,6 +32,13 @@ import axios from "axios";
 import { getError } from "./utils";
 import "./style/header.css";
 import { LinkContainer } from "react-router-bootstrap";
+import logo from "../src/photo/logo.png";
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import PersonIcon from '@mui/icons-material/Person';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import HistoryIcon from '@mui/icons-material/History';
 
 
 function App() {
@@ -77,19 +84,22 @@ function App() {
         <ToastContainer position="bottom-center" limit={1} ></ToastContainer>
        
         <header>
-          <Navbar bg="dark" variant="dark" expand="lg" >
+          <Navbar className="navbar" expand="lg" >
             <Container >
             <Button variant="dark" onClick={() => setSidebarIsOpen(!sidebarIsOpen)}>
               <i className="fas fa-bars"></i>
             </Button>
               <LinkContainer to = "/">
-                <Navbar.Brand className="brand">ecommerce</Navbar.Brand>
+                <Navbar.Brand className="brand">
+                  <img src={logo} alt="logo" className="logo"/>
+                </Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <SearchBox />
               <Nav className="me-auto w-100 justify-content-end">
-              <Link to="/cart" className="nav-link">
+              
+              <Link to="/cart" className="nav-link"><ShoppingBasketIcon />
                 Cart
                 {cart.cartItems.length > 0 && (
                   <Badge pill bg="danger">
@@ -97,23 +107,26 @@ function App() {
                   </Badge>
                 )}
               </Link>
-              {userInfo ? (
-                <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+
+              
+              {userInfo ? ( 
+                <NavDropdown title={userInfo.name}  id="basic-nav-dropdown"> 
                   <LinkContainer to="/profile">
-                    <NavDropdown.Item>User Profile</NavDropdown.Item>
+                    <NavDropdown.Item><PersonIcon />User Profile</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/orderhistory">
-                    <NavDropdown.Item>Order History</NavDropdown.Item>
+                    <NavDropdown.Item><HistoryIcon /> Order History</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Divider></NavDropdown.Divider>
-                  <Link className="dropdown-item" to="#signout" onClick={signoutHandler}>Sign Out</Link>
+                  <Link className="dropdown-item" to="#signout" onClick={signoutHandler}><ExitToAppIcon/>Sign Out</Link>
                 </NavDropdown>
               ):(
-                <Link className="nav-link" to="/signin"> Sign In </Link>
+                <Link className="nav-link" to="/signin"> <AccountCircleIcon/>Sign In </Link>
               )}
 
+              
               {userInfo && userInfo.isAdmin && (
-                <NavDropdown title="Admin" id="admin-nav-dropdown">
+                <NavDropdown title="Admin" id="admin-nav-dropdown"> <AdminPanelSettingsIcon />
                   <LinkContainer to="/admin/dashboard">
                     <NavDropdown.Item>Dashboard</NavDropdown.Item>
                   </LinkContainer>
@@ -134,14 +147,15 @@ function App() {
           </Container>
         </Navbar>
         </header>
+        
       <div className= {sidebarIsOpen ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column' : 'side-navbar d-flex justify-content-between flex-wrap flex-column'}>
-        <Nav className="flex-column text-white w-100 p-2">
-          <Nav.Item>
-            <strong>Categories</strong>
+        <Nav className="flex-column text-white w-100 h-100 p-2">
+          <Nav.Item className="sidebar-header">
+            <strong>CATEGORIES</strong>
           </Nav.Item>
           {categories.map((category) => (
-            <Nav.Item key={category}>
-              <LinkContainer 
+            <Nav.Item key={category} >
+              <LinkContainer className="sidebar"
                 to={{ pathname:'/search', search:`category=${category}`}} 
                 onClick={() => setSidebarIsOpen(false)}>
                 <Nav.Link>{category}</Nav.Link>

@@ -4,7 +4,8 @@ import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Store } from "../Store";
 import Rating from "./Rating";
-import "../style/HomeScreen.css"
+import "../style/HomeScreen.css";
+import "../style/product.css";
 
 function Product(props){
     const {product} = props;
@@ -33,7 +34,7 @@ function Product(props){
             </Link>
             <Card.Body>
                 <Link to={`/product/${product.slug}`}>
-                    <Card.Title>{product.name}</Card.Title>
+                    <Card.Title className="productname">{product.name}</Card.Title>
                 </Link>
                 <Rating rating = {product.rating} numReviews={product.numReviews}></Rating>
                 <Card.Text><strong>Rs.{product.price}</strong></Card.Text>
@@ -41,7 +42,7 @@ function Product(props){
                      <Button variant="light" disabled>
                         Out of Stock
                     </Button>
-                ): (<Button onClick={()=> addtoCartHandler(product)}>Add to cart</Button>
+                ): (<Button className="bg-success" onClick={()=> addtoCartHandler(product)}>Add to cart</Button>
                 )}
             </Card.Body>
         </Card>

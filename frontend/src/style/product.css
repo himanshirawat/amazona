@@ -1,0 +1,11 @@
+.productname{
+    color: black;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 990px) {
+    .card-img-top{
+        width: 254px;
+        height: 270px;
+    }
+}
