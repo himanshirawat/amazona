@@ -16,15 +16,15 @@ const Footer = () => {
                     <FacebookIcon />
                     <GoogleIcon />
                     <LinkedInIcon />
-                    <GitHubIcon />
+                    <GitHubIcon />                
                 </p>
             </div>  
-            <div className="midfooter">
+            <div className="midfooter ">
                 <img src={logo} alt="logo" className="logo"/>
                 <p>High Quality is our first priority</p>
                 <p>Copyrights 2023 &copy; ecommerce</p>
             </div> 
-            <div className="rightfooter">
+            <div className="rightfooter ">
                  <h4>CONTRIBUTORS </h4>
                  <a href="https://www.linkedin.com/in/himanshi-rawat">Himanshi Rawat</a>
                  <a href="https://www.linkedin.com/in/himanshi-rawat">Atul Paswan</a>
