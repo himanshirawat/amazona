@@ -27,9 +27,9 @@ const Footer = () => {
             <div className="rightfooter ">
                  <h4>CONTRIBUTORS </h4>
                  <a href="https://www.linkedin.com/in/himanshi-rawat">Himanshi Rawat</a>
-                 <a href="https://www.linkedin.com/in/himanshi-rawat">Atul Paswan</a>
-                 <a href="https://www.linkedin.com/in/himanshi-rawat">Vikash Nautiyal</a>
-                 <a href="https://www.linkedin.com/in/himanshi-rawat">Praveen Negi</a>
+                 // <a href="https://www.linkedin.com/in/himanshi-rawat">Atul Paswan</a>
+                 // <a href="https://www.linkedin.com/in/himanshi-rawat">Vikash Nautiyal</a>
+                 // <a href="https://www.linkedin.com/in/himanshi-rawat">Praveen Negi</a>
 
             </div>      
         </footer>
