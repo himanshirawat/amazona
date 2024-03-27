@@ -1,71 +1,87 @@
-.banner{
-    background: url(../photo/banner.jpeg);
-    background-size: cover;
-    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%),url(../photo/banner.jpeg); */
-    height: 90vmin;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+.banner {
+  position: relative; /* Ensure relative positioning for absolute overlay */
+  height: 83vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../photo/banner.jpeg);
+  background-size: cover;
+  opacity: 0.7;
 }
 
 .banner > h1 {
-    margin: 5vmax;
-    font: 600 2.5vmax "Roboto";
+  position: relative; /* Ensure relative positioning for z-index to work */
+  z-index: 1;
+  margin: 5vmax;
+  font: 600 2.5vmax "Roboto";
 }
 .banner > h2 {
-    margin: 5vmax;
-    font: 700 2.5vmax "Roboto";
+  position: relative; /* Ensure relative positioning for z-index to work */
+  z-index: 1;
+  margin: 5vmax;
+  font: 700 2.5vmax "Roboto";
 }
 
-.banner > p{
-    font: 300 1.4vmax "Lucida Sans";
+.banner > p {
+  position: relative; /* Ensure relative positioning for z-index to work */
+  z-index: 1;
+  font: 300 1.4vmax "Lucida Sans";
 }
 
 .banner > a > button {
-    margin-bottom: 5vmax;
-    cursor: pointer;
-    background-color: white;
-    border: 1px solid white;
-    padding: 1vmax;
-    transition: all 0.5s;
-    width: 9vmax;
-    font: 500 1vmax "Roboto";
- 
+    position: relative; /* Ensure relative positioning for z-index to work */
+  z-index: 1;
+  margin-bottom: 5vmax;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  padding: 1vmax;
+  transition: all 0.5s;
+  width: 9vmax;
+  font: 500 1vmax "Roboto";
 }
 
 .banner > a > button:hover {
-    background-color: rgb(2,0,36);
-    color: white;
+  background-color: rgb(2, 0, 36);
+  color: white;
 }
 
 .homeheading {
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.4vmax;
-    border-bottom: 1px solid rgba(2,0,36,1);
-    width: 20vmax;
-    padding: 1vmax;
-    margin: 5vmax auto ;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.4vmax;
+  border-bottom: 1px solid rgba(2, 0, 36, 1);
+  width: 20vmax;
+  padding: 1vmax;
+  margin: 5vmax auto;
 }
 
-
-.products{
-    display: flex;
-    margin: 2vmax auto;
-    width: 80vw;
-    flex-wrap: wrap;
+.products {
+  display: flex;
+  margin: 2vmax auto;
+  width: 80vw;
+  flex-wrap: wrap;
 }
 
 .productCard {
-    display: flex;
-    flex-direction: column;
-    transition: all 0.5s;
-    padding-bottom: 0.5vmax;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  padding-bottom: 0.5vmax;
 }
 .productCard:hover {
-    box-shadow: 0 0 5px rgba(2,0,36,1);
-    transform: translateY();
+  box-shadow: 0 0 5px rgba(2, 0, 36, 1);
+  transform: translateY();
 }

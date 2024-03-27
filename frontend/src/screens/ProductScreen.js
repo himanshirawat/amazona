@@ -143,7 +143,7 @@ function ProductScreen(){
                             type="button"
                             variant="light"
                             onClick={() => setSelectedImage(x)}>
-                              <Card.Img variant="top" src={x} alt="product"></Card.Img>
+                              <Card.Img src={x} alt="product"></Card.Img>
                             </Button>
                         </Card>
                       </Col>
@@ -188,7 +188,7 @@ function ProductScreen(){
             </Col>
           </Row>
 
-          <div className="my-3">
+          <div className="my-5">
             <h2 ref={reviewsRef}>Reviews</h2>
             <div className="mb-3">
               {product.reviews.length === 0 && (
@@ -197,7 +197,7 @@ function ProductScreen(){
             </div>
             <ListGroup>
               {product.reviews.map((review) => (
-                <ListGroup.Item key={review._id}>
+                <ListGroup.Item key={review._id} style={{width:'400px', backgroundColor: 'beige'}}>
                   <strong>{review.name}</strong>
                   <Rating rating={review.rating} caption=" "></Rating>
                   <p>{review.createdAt.substring(0,10)}</p>

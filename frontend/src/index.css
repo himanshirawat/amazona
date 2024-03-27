@@ -1,53 +1,55 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.site-container{
+.site-container {
   min-height: 100vh;
 }
-main{
+main {
   flex: 1;
 }
 
-.btn-outline-primary{
-  background-color:  #1d2dc0;
+.btn-outline-primary {
+  background-color: #1d2dc0;
   color: #fff;
 }
-.products{
+.products {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
-.rating span{
+.rating span {
   color: #ffc000;
 }
-.product{
+.product {
   border: 1px #040404 solid;
   margin: 1rem;
 }
 
-.product img{
+.product img {
   width: 100%;
   max-width: 400px;
 }
 
-.product-info{
+.product-info {
   padding: 1rem;
 }
 
-.img-large{
+.img-large {
+  min-width: 60%;
   max-width: 100%;
+  border-radius: 5%;
 }
 
-.img-thumbnail{
+.img-thumbnail {
   height: 80px;
 }
 
-.small-container{
+.small-container {
   max-width: 600px;
 }
 
@@ -62,18 +64,18 @@ main{
 }
 
 /* sidebar */
-.navbar-brand{
+.navbar-brand {
   font-weight: bold;
 }
 .side-navbar {
   width: 240px;
   height: 100%;
-  position:absolute;
+  position: absolute;
   left: -300px;
   background-color: #100901;
   transition: 0.5s;
 }
-.site-container{
+.site-container {
   transition: 0.4s;
 }
 .active-cont {
@@ -81,7 +83,7 @@ main{
 }
 
 .active-nav {
-  left:0;
+  left: 0;
 }
 
 .text-bold {
@@ -104,10 +106,10 @@ main{
   height: 100vh;
   max-width: initial;
   margin: 0;
-  padding : 0;
+  padding: 0;
 }
 
-.full-box .mt-3{
+.full-box .mt-3 {
   margin-top: 0 !important;
 }
 
@@ -122,9 +124,9 @@ main{
   display: flex;
 }
 
-.map-input-box input{
+.map-input-box input {
   border-radius: 1rem 0 0 1rem;
-  border-right:0;
+  border-right: 0;
 }
 
 .map-input-box button {
@@ -133,5 +135,27 @@ main{
 }
 
 button.thumbnail {
-  padding: 0 ;
+  padding: 0;
 }
+
+.carttt {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebarcss {
+  position: fixed;
+  overflow: hidden;
+}
+
+.logooo {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 4px;
+}
+
+

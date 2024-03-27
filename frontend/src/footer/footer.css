@@ -1,63 +1,62 @@
-footer{
-    /* margin-top: 10vmax;
+footer {
+  /* margin-top: 10vmax;
     padding: 2vmax; */
-    background-color: rgb(82, 172, 82);
-    font-weight: bold;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    margin: 0px auto;
-    padding: 20px 0px;
+  background-color: rgb(82, 172, 82);
+
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  margin: 0px auto;
+  padding: 20px 0px;
 }
 
 h4 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.4vmax;
-    text-decoration: underline;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.4vmax;
+  text-decoration: underline;
 }
 
-.leftfooter > p{
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.leftfooter > p {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .midfooter > .logo {
-    height: 30%;
-    width: 30%;
-    border-radius: 50%;
+  height: 30%;
+  width: 30%;
+  border-radius: 50%;
 }
 
-.midfooter > p{
-    max-width: 60%;
-    margin: 1vmax auto;
+.midfooter > p {
+  max-width: 60%;
+  margin: 4px auto;
 }
 
-.rightfooter > a{
-    text-decoration: none;
-    font-size: 1.3vmax;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
-    margin: 0.5vmax;
+.rightfooter > a {
+  text-decoration: none;
+  font-size: 1.3vmax;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: black;
+  margin: 0.5vmax;
 }
 
-    .leftfooter{
-        width: 100%;
-        display : flex;
-        flex-direction:column;
-        align-items: center;
-    }
-    
-    .midfooter {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .rightfooter {
-        width: 100%;
-        display: flex;
-        flex-direction: column ;
-        align-items: center;
-    }
+.leftfooter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.midfooter {
+  width: 100%;
+  text-align: center;
+}
 
-
+.rightfooter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

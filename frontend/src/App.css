@@ -42,3 +42,10 @@
     transform: rotate(360deg);
   }
 }
+
+.drag{
+  background-color: none;
+}
+
+
+
